@@ -10,6 +10,7 @@ target 'CatOnCloud' do
   target 'CatOnCloudTests' do
     inherit! :search_paths
     pod 'Alamofire'
+    pod 'SwiftyJSON'
     # Pods for testing
   end
 

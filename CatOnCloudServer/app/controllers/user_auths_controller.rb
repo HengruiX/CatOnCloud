@@ -1,6 +1,6 @@
 class UserAuthsController < ApplicationController
   def auth
-    username = params["name"]
+    username = params["username"]
     password = params["password"]
     @user = UserAuth.where("name = \"#{username}\" and password = \"#{password}\"").take
     if @user

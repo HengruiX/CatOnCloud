@@ -13,6 +13,7 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let baseURL = "http://localhost:3000"
+    var userID = -1
 
     var window: UIWindow?
 

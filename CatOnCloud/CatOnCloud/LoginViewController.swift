@@ -8,12 +8,14 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +28,22 @@ class LoginViewController: UIViewController {
     func login() {
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""
-        let baseURl = (UIApplication.shared.delegate as! AppDelegate).baseURL
-        Alamofire.request("#{baseURL}/auth").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
+        let baseURL = (UIApplication.shared.delegate as! AppDelegate).baseURL
+        print("\(baseURL)/auth?username=\(username)&password=\(password)")
+        Alamofire.request("\(baseURL)/auth?username=\(username)&password=\(password)").responseJSON { response in
             
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
+            if((response.result.value) != nil) {
+                let json = JSON(response.result.value!)
+                if (json["status"] == 0) {
+                    self.errorLabel.text = "Invalid Credentials"
+                } else {
+                    self.errorLabel.text = ""
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabController")
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.userID = json["id"].int!
+                    appDelegate.window?.rootViewController = tabBarController
+                }
             }
         }        
     }
