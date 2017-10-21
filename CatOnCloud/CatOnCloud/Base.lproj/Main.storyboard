@@ -9,47 +9,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--All Cats-->
+        <!--Explore Cats-->
         <scene sceneID="KhD-fc-Gu5">
             <objects>
                 <tableViewController id="7YA-0z-nA7" customClass="AllCatTableViewController" customModule="CatOnCloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" id="ATY-1Z-Ick">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="ATY-1Z-Ick">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AllCatTableViewCell" focusStyle="custom" rowHeight="133" id="TJF-dP-ISU" customClass="AllCatTableViewCell" customModule="CatOnCloud" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AllCatTableViewCell" focusStyle="custom" rowHeight="100" id="TJF-dP-ISU" customClass="AllCatTableViewCell" customModule="CatOnCloud" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TJF-dP-ISU" id="Oqq-VT-elL">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="132.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihk-58-81G">
-                                            <rect key="frame" x="138" y="7" width="230" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihk-58-81G">
+                                            <rect key="frame" x="112" y="13" width="230" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-q6-Nel">
+                                            <rect key="frame" x="18" y="13" width="79" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckq-E0-MQo">
+                                            <rect key="frame" x="112" y="34" width="216" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u2x-Ny-stJ">
-                                            <rect key="frame" x="138" y="25" width="230" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-q6-Nel">
-                                            <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descLabel" destination="Ckq-E0-MQo" id="nsX-4R-P08"/>
                                     <outlet property="nameLabel" destination="Ihk-58-81G" id="dPU-by-sne"/>
-                                    <outlet property="nameTextView" destination="u2x-Ny-stJ" id="Yhr-4p-9gY"/>
-                                    <outlet property="photoImageView" destination="mLk-q6-Nel" id="YpK-Cd-rEC"/>
+                                    <outlet property="photoImageView" destination="mLk-q6-Nel" id="eOw-61-BvR"/>
                                     <segue destination="P1a-17-evQ" kind="push" identifier="mySegue1" id="rBA-Y3-9et"/>
                                 </connections>
                             </tableViewCell>
@@ -59,11 +58,11 @@
                             <outlet property="delegate" destination="7YA-0z-nA7" id="hLg-ih-Whk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Cats" id="ocT-r8-E3T"/>
+                    <navigationItem key="navigationItem" title="Explore Cats" id="ocT-r8-E3T"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frz-97-5u3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505" y="-844"/>
+            <point key="canvasLocation" x="1504.8" y="-844.22788605697156"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="i1Y-d9-bZ7">
