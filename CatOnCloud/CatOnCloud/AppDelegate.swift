@@ -11,6 +11,8 @@ import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let baseURL = "http://localhost:3000"
 
     var window: UIWindow?
 

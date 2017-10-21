@@ -9,7 +9,7 @@ target 'CatOnCloud' do
 
   target 'CatOnCloudTests' do
     inherit! :search_paths
-    pod 'Alamofire', '~> 4.5'
+    pod 'Alamofire'
     # Pods for testing
   end
 

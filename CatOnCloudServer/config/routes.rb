@@ -21,4 +21,7 @@ Rails.application.routes.draw do
 	#cat
 	get "user/recommanded_cats" => "users#recommanded_cats" # Tested
 
+	#user_auth
+	get "auth" => "user_auths#auth"
+
 end
