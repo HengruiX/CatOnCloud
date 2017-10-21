@@ -127,6 +127,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F8E426FC1F9BFBB60054D4B3 /* Cat Explore */ = {
+			isa = PBXGroup;
+			children = (
+				FC429E3A1F9B0C0900ED914F /* AllCatTableViewController.swift */,
+				FC429E321F9B092400ED914F /* AllCatTableViewCell.swift */,
+				FCFA682F1F9B5BE100515B21 /* AllCatViewController.swift */,
+				F8E426FA1F9BE1910054D4B3 /* CatPreviewTableViewCell.swift */,
+			);
+			name = "Cat Explore";
+			sourceTree = "<group>";
+		};
+		F8E426FD1F9BFBD60054D4B3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F870522E1F9BB45B00BCE1E3 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		F8E426FE1F9BFBE60054D4B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC429E3E1F9B0DC400ED914F /* Cat.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F8E426FF1F9BFBF20054D4B3 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				F8E426F31F9BC7F90054D4B3 /* ImageHelper.swift */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
 		FC429E001F9B039400ED914F = {
 			isa = PBXGroup;
 			children = (
@@ -150,18 +185,15 @@
 		FC429E0B1F9B039400ED914F /* CatOnCloud */ = {
 			isa = PBXGroup;
 			children = (
+				F8E426FF1F9BFBF20054D4B3 /* Media */,
+				F8E426FE1F9BFBE60054D4B3 /* Model */,
+				F8E426FD1F9BFBD60054D4B3 /* Login */,
+				F8E426FC1F9BFBB60054D4B3 /* Cat Explore */,
 				FC429E0C1F9B039400ED914F /* AppDelegate.swift */,
-				FC429E3A1F9B0C0900ED914F /* AllCatTableViewController.swift */,
-				FC429E3E1F9B0DC400ED914F /* Cat.swift */,
-				FC429E321F9B092400ED914F /* AllCatTableViewCell.swift */,
 				FC429E121F9B039400ED914F /* Main.storyboard */,
-				FCFA682F1F9B5BE100515B21 /* AllCatViewController.swift */,
 				FC429E151F9B039400ED914F /* Assets.xcassets */,
 				FC429E171F9B039400ED914F /* LaunchScreen.storyboard */,
 				FC429E1A1F9B039400ED914F /* Info.plist */,
-				F870522E1F9BB45B00BCE1E3 /* LoginViewController.swift */,
-				F8E426F31F9BC7F90054D4B3 /* ImageHelper.swift */,
-				F8E426FA1F9BE1910054D4B3 /* CatPreviewTableViewCell.swift */,
 			);
 			path = CatOnCloud;
 			sourceTree = "<group>";

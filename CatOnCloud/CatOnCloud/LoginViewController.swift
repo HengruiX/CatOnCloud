@@ -21,7 +21,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
-
+        ImageHelper().uploadImage(image: #imageLiteral(resourceName: "cat1")) { (i) in
+            print(i)
+        }
         // Do any additional setup after loading the view.
     }
     
