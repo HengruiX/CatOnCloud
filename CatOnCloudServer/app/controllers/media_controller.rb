@@ -6,7 +6,7 @@ class MediaController < ApplicationController
     @item.picture = params["media"]
 
     if @item.save
-      render json: {status: :created, location: @item}
+      render json: {id: @item.id}
   	else
   	  render json: {status: :unprocessable_entity, err: @item.errors}
   	end

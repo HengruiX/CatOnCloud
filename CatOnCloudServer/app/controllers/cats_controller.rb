@@ -12,10 +12,10 @@ class CatsController < ApplicationController
 		@cat.picsUrl = urls
 		@cat.rate = params["rate"]
 		@cat.location = params["location"]
-		@cat.subscription = 0
+		@cat.subs = 0
 		@cat.owner_id = params["owner_id"]
 		if @cat.save
-	      render json: {status: :created, location: @cat}
+	      render json: {id: @cat.id}
 	    else
 	      render json: {status: :unprocessable_entity, err: @cat.errors}
 	    end
