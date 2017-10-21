@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021185609) do
+ActiveRecord::Schema.define(version: 20171021211735) do
 
   create_table "cats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "name"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171021185609) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "description"
-    t.integer "type"
+    t.integer "media_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture_file_name"
@@ -36,12 +36,24 @@ ActiveRecord::Schema.define(version: 20171021185609) do
     t.datetime "picture_updated_at"
   end
 
+  create_table "newcats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "pics"
+    t.text "location"
+    t.string "name"
+    t.string "description"
+    t.integer "interested"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.timestamp "time"
     t.integer "likes"
     t.text "imageURLS"
     t.text "videoURLS"
     t.integer "cat_id"
+    t.text "words"
   end
 
   create_table "user_auths", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
