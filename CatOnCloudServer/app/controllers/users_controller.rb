@@ -55,8 +55,11 @@ class UsersController < ApplicationController
     # Naive implementation
     res = []
     id = params["id"]
+    @user = User.find(id)
     Cat.where("owner_id != #{id}").find_each do |cat|
-      res.push(cat)
+      if ! @user.sublist.include? cat.id
+        res.push(cat)
+      end
     end
 
     render json: res
