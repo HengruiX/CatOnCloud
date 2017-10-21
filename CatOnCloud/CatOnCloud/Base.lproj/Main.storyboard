@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="229.59999999999999" y="-844.22788605697156"/>
         </scene>
-        <!--All Cat View Controller-->
+        <!--Cat Preview-->
         <scene sceneID="AGU-WR-Gnp">
             <objects>
                 <viewController id="P1a-17-evQ" customClass="AllCatViewController" customModule="CatOnCloud" customModuleProvider="target" sceneMemberID="viewController">
@@ -181,42 +181,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cat Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUN-VI-d8L">
-                                <rect key="frame" x="16" y="118" width="343" height="56"/>
+                                <rect key="frame" x="16" y="72" width="343" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-jE-noM">
-                                <rect key="frame" x="16" y="182" width="343" height="295"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="jD1-Fd-qD7" appends="YES" id="ClE-ba-tC9"/>
-                                </connections>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pvg-Wd-KkB">
-                                <rect key="frame" x="16" y="490" width="343" height="157"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="123" translatesAutoresizingMaskIntoConstraints="NO" id="Pvg-Wd-KkB">
+                                <rect key="frame" x="39" y="124" width="298" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dM4-rL-Mpt">
+                                <rect key="frame" x="39" y="227" width="298" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="previewcell" rowHeight="161" id="cL1-5H-lEq" customClass="CatPreviewTableViewCell" customModule="CatOnCloud" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="298" height="161"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cL1-5H-lEq" id="8Wc-Fc-cEk">
+                                            <rect key="frame" x="0.0" y="0.0" width="298" height="160.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbW-Ip-Dm7">
+                                                    <rect key="frame" x="29" y="20" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImageView" destination="kbW-Ip-Dm7" id="yNH-9A-2qY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="P1a-17-evQ" id="qfk-Xr-hUB"/>
+                                    <outlet property="delegate" destination="P1a-17-evQ" id="eQ9-am-a9N"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gallery: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ3-zL-0iM">
+                                <rect key="frame" x="39" y="198" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaR-nc-wgB">
+                                <rect key="frame" x="39" y="450" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Subscribe!"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7Rj-DY-fSl"/>
+                    <navigationItem key="navigationItem" title="Cat Preview" id="7Rj-DY-fSl"/>
                     <connections>
-                        <outlet property="nameLabel" destination="WUN-VI-d8L" id="G2W-1J-tMU"/>
-                        <outlet property="nameTextView" destination="Pvg-Wd-KkB" id="O0J-wO-HUG"/>
-                        <outlet property="photoImageView" destination="fd5-jE-noM" id="KVg-5k-kD0"/>
+                        <outlet property="descText" destination="Pvg-Wd-KkB" id="08G-3n-jv6"/>
+                        <outlet property="nameLabel" destination="WUN-VI-d8L" id="ENc-Ow-T4p"/>
+                        <outlet property="preTableView" destination="dM4-rL-Mpt" id="oxa-Jf-1Sr"/>
+                        <outlet property="subButton" destination="JaR-nc-wgB" id="kq0-eO-sqf"/>
                     </connections>
                 </viewController>
                 <tapGestureRecognizer id="jD1-Fd-qD7"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRq-WI-PhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2594" y="-844"/>
+            <point key="canvasLocation" x="2592.8000000000002" y="-844.22788605697156"/>
         </scene>
     </scenes>
 </document>
