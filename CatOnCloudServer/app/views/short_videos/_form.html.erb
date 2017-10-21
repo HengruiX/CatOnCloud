@@ -1,0 +1,17 @@
+<%= form_with(model: short_video, local: true) do |form| %>
+  <% if short_video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(short_video.errors.count, "error") %> prohibited this short_video from being saved:</h2>
+
+      <ul>
+      <% short_video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

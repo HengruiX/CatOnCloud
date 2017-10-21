@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :short_videos
 	root "application#hello"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	post "/newcat"=> "cats#create_cat"
+	get "/getcats" => "cats#getcats"
+	post "/upload" => "attachment#create"
 end

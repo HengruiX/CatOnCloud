@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Short Videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @short_videos.each do |short_video| %>
+      <tr>
+        <td><%= link_to 'Show', short_video %></td>
+        <td><%= link_to 'Edit', edit_short_video_path(short_video) %></td>
+        <td><%= link_to 'Destroy', short_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Short Video', new_short_video_path %>
