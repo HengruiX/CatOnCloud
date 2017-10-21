@@ -1,10 +1,5 @@
 class ImageController < ApplicationController
 
-  def get_all
-  	@item = Item.find(1)
-  	render json: @item.picture.url(:medium)
-  end
-
   def upload
     @item = Item.new
     @item.picture = params["picture"]
