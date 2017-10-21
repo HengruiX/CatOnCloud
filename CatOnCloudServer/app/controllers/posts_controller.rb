@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     for i in params["media_ids"]
       @item = Item.find(i)
       if @item != nil
-        if @item.type == 0
+        if @item.media_type == 0
           image_urls.push(@item.picture.url(:medium))
         else 
           video_urls.push(@item.picture.url(:medium))

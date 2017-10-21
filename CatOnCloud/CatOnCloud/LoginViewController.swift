@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""
         let baseURL = (UIApplication.shared.delegate as! AppDelegate).baseURL
-        print("\(baseURL)/auth?username=\(username)&password=\(password)")
         Alamofire.request("\(baseURL)/auth?username=\(username)&password=\(password)").responseJSON { response in
             
             if((response.result.value) != nil) {

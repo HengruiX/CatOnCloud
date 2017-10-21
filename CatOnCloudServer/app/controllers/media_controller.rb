@@ -2,7 +2,7 @@ class MediaController < ApplicationController
 
   def upload
     @item = Item.new
-    @item.type = params["type"]
+    @item.media_type = params["media_type"]
     @item.picture = params["media"]
 
     if @item.save

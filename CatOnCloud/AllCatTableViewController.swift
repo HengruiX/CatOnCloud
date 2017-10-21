@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class AllCatTableViewController: UITableViewController{
     
@@ -16,8 +17,7 @@ class AllCatTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadSampleCats()
+        loadRecommendedCats()
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,32 +50,33 @@ class AllCatTableViewController: UITableViewController{
         
         cell.nameLabel.text = cat.name
         cell.photoImageView.image = cat.photo
-        cell.nameTextView.text = cat.description
+        cell.descLabel.text = cat.description
         
         return cell
     }
     
     
    
-    private func loadSampleCats() {
+    private func loadRecommendedCats() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let baseURL = appDelegate.baseURL
+        let userID = appDelegate.userID
         
-        let photo1 = UIImage(named: "cat1")
-        let photo2 = UIImage(named: "cat2")
-        let photo3 = UIImage(named: "cat3")
-        
-        guard let cat1 = Cat(name: "Cat1 ", photo: photo1, description: " ") else {
-            fatalError("Unable to instantiate cat1")
+        Alamofire.request("\(baseURL)/user/recommanded_cats?id=\(userID)").responseJSON { response in
+            
+            if((response.result.value) != nil) {
+                let json = JSON(response.result.value!)
+                let helper = ImageHelper()
+                for catJson in json {
+                    let url = catJson.1["picsUrl"].arrayValue[0].stringValue
+                    helper.downloadImage(url: "\(baseURL)\(url)", completion: { (image) in
+                        let cat = Cat(name: catJson.1["name"].stringValue, photo: image, description: catJson.1["description"].stringValue)
+                        self.cats.append(cat!)
+                        self.tableView.reloadData()
+                    })
+                }
+            }
         }
-        
-        guard let cat2 = Cat(name: "Cat2 ", photo: photo2, description: " ") else {
-            fatalError("Unable to instantiate meal2")
-        }
-        
-        guard let cat3 = Cat(name: "Cat3 ", photo: photo3, description: " ") else {
-            fatalError("Unable to instantiate meal2")
-        }
-        
-        cats += [cat1, cat2, cat3]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

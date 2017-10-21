@@ -13,6 +13,7 @@
 		F8E426EC1F9BC1330054D4B3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E426EB1F9BC1330054D4B3 /* SwiftyJSON.framework */; };
 		F8E426ED1F9BC1620054D4B3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E426EB1F9BC1330054D4B3 /* SwiftyJSON.framework */; };
 		F8E426EE1F9BC1620054D4B3 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8E426EB1F9BC1330054D4B3 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8E426F41F9BC7F90054D4B3 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E426F31F9BC7F90054D4B3 /* ImageHelper.swift */; };
 		FC429E0D1F9B039400ED914F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E0C1F9B039400ED914F /* AppDelegate.swift */; };
 		FC429E141F9B039400ED914F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC429E121F9B039400ED914F /* Main.storyboard */; };
 		FC429E161F9B039400ED914F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC429E151F9B039400ED914F /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		F87052281F9BAA8800BCE1E3 /* Pods_CatOnCloudTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CatOnCloudTests.framework; path = "Pods/../build/Debug-iphoneos/Pods_CatOnCloudTests.framework"; sourceTree = "<group>"; };
 		F870522E1F9BB45B00BCE1E3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8E426EB1F9BC1330054D4B3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/CatOnCloud-grldbxpsjbdbmmdewimppsoyiuwc/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		F8E426F31F9BC7F90054D4B3 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		FC429E091F9B039400ED914F /* CatOnCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatOnCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC429E0C1F9B039400ED914F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC429E131F9B039400ED914F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				FC429E171F9B039400ED914F /* LaunchScreen.storyboard */,
 				FC429E1A1F9B039400ED914F /* Info.plist */,
 				F870522E1F9BB45B00BCE1E3 /* LoginViewController.swift */,
+				F8E426F31F9BC7F90054D4B3 /* ImageHelper.swift */,
 			);
 			path = CatOnCloud;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				FC429E0D1F9B039400ED914F /* AppDelegate.swift in Sources */,
 				FCFA68301F9B5BE100515B21 /* AllCatViewController.swift in Sources */,
 				FC429E3F1F9B0DC400ED914F /* Cat.swift in Sources */,
+				F8E426F41F9BC7F90054D4B3 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

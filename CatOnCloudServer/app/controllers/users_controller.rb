@@ -59,10 +59,7 @@ class UsersController < ApplicationController
       res.push(cat)
     end
 
-    a = rand(res.count)
-    b = rand(res.count)
-
-    render json: [res[a], res[b]]
+    render json: res
   end
 
 end
