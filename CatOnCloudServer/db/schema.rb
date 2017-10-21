@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021125844) do
-
-  create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20171021082308) do
 
   create_table "cats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "name"
@@ -23,22 +18,18 @@ ActiveRecord::Schema.define(version: 20171021125844) do
     t.text "picsUrl"
     t.float "rate", limit: 24
     t.text "location"
+    t.integer "subs"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "owner_id"
-    t.integer "subscription"
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "description"
+    t.integer "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture_file_name"
-    t.string "picture_content_type"
-    t.integer "picture_file_size"
-    t.datetime "picture_updated_at"
-    t.integer "type"
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,20 +37,13 @@ ActiveRecord::Schema.define(version: 20171021125844) do
     t.integer "likes"
     t.text "imageURLS"
     t.text "videoURLS"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "cat_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.text "intro"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "subscribes"
-  end
-
-  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "sublist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     @post.videoURLS = video_urls
 
     if @post.save
-      render json: {status: :created, location: @post}
+      render json: {id:@post.id}
     else
       render json: {status: :unprocessable_entity, err: @post.errors}
     end

@@ -21,7 +21,4 @@ Rails.application.routes.draw do
 	#cat
 	get "user/recommanded_cats" => "users#recommanded_cats" # Tested
 
-
-
-
 end

@@ -6,7 +6,8 @@ class CreateCats < ActiveRecord::Migration[5.1]
       t.text :picsUrl
       t.float :rate
       t.text :location
-
+      t.integer :subs
+      t.integer :owner_id
       t.timestamps
     end
   end
