@@ -15,6 +15,16 @@
 		F8E426F81F9BDE5B0054D4B3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87052261F9BAA0D00BCE1E3 /* Alamofire.framework */; };
 		F8E426F91F9BDE5B0054D4B3 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F87052261F9BAA0D00BCE1E3 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8E426FB1F9BE1910054D4B3 /* CatPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E426FA1F9BE1910054D4B3 /* CatPreviewTableViewCell.swift */; };
+		F8E4270A1F9C15890054D4B3 /* SubCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427001F9C15890054D4B3 /* SubCatViewController.swift */; };
+		F8E4270B1F9C15890054D4B3 /* SubCatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427011F9C15890054D4B3 /* SubCatTableViewCell.swift */; };
+		F8E4270C1F9C15890054D4B3 /* SubCatTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427021F9C15890054D4B3 /* SubCatTableTableViewController.swift */; };
+		F8E4270D1F9C15890054D4B3 /* MyCatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E427031F9C15890054D4B3 /* MyCatViewController.xib */; };
+		F8E4270E1F9C15890054D4B3 /* MyCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427041F9C15890054D4B3 /* MyCatViewController.swift */; };
+		F8E4270F1F9C15890054D4B3 /* MyCatTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E427051F9C15890054D4B3 /* MyCatTableViewController.xib */; };
+		F8E427101F9C15890054D4B3 /* MyCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427061F9C15890054D4B3 /* MyCatTableViewController.swift */; };
+		F8E427111F9C15890054D4B3 /* MyCatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427071F9C15890054D4B3 /* MyCatTableViewCell.swift */; };
+		F8E427121F9C15890054D4B3 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F8E427081F9C15890054D4B3 /* Base.lproj */; };
+		F8E427131F9C15890054D4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E427091F9C15890054D4B3 /* Assets.xcassets */; };
 		FC429E0D1F9B039400ED914F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E0C1F9B039400ED914F /* AppDelegate.swift */; };
 		FC429E141F9B039400ED914F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC429E121F9B039400ED914F /* Main.storyboard */; };
 		FC429E161F9B039400ED914F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC429E151F9B039400ED914F /* Assets.xcassets */; };
@@ -64,6 +74,16 @@
 		F8E426EB1F9BC1330054D4B3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/CatOnCloud-grldbxpsjbdbmmdewimppsoyiuwc/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		F8E426F31F9BC7F90054D4B3 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		F8E426FA1F9BE1910054D4B3 /* CatPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		F8E427001F9C15890054D4B3 /* SubCatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCatViewController.swift; sourceTree = "<group>"; };
+		F8E427011F9C15890054D4B3 /* SubCatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCatTableViewCell.swift; sourceTree = "<group>"; };
+		F8E427021F9C15890054D4B3 /* SubCatTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCatTableTableViewController.swift; sourceTree = "<group>"; };
+		F8E427031F9C15890054D4B3 /* MyCatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCatViewController.xib; sourceTree = "<group>"; };
+		F8E427041F9C15890054D4B3 /* MyCatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCatViewController.swift; sourceTree = "<group>"; };
+		F8E427051F9C15890054D4B3 /* MyCatTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCatTableViewController.xib; sourceTree = "<group>"; };
+		F8E427061F9C15890054D4B3 /* MyCatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCatTableViewController.swift; sourceTree = "<group>"; };
+		F8E427071F9C15890054D4B3 /* MyCatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCatTableViewCell.swift; sourceTree = "<group>"; };
+		F8E427081F9C15890054D4B3 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		F8E427091F9C15890054D4B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC429E091F9B039400ED914F /* CatOnCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatOnCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC429E0C1F9B039400ED914F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC429E131F9B039400ED914F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +205,16 @@
 		FC429E0B1F9B039400ED914F /* CatOnCloud */ = {
 			isa = PBXGroup;
 			children = (
+				F8E427001F9C15890054D4B3 /* SubCatViewController.swift */,
+				F8E427011F9C15890054D4B3 /* SubCatTableViewCell.swift */,
+				F8E427021F9C15890054D4B3 /* SubCatTableTableViewController.swift */,
+				F8E427031F9C15890054D4B3 /* MyCatViewController.xib */,
+				F8E427041F9C15890054D4B3 /* MyCatViewController.swift */,
+				F8E427051F9C15890054D4B3 /* MyCatTableViewController.xib */,
+				F8E427061F9C15890054D4B3 /* MyCatTableViewController.swift */,
+				F8E427071F9C15890054D4B3 /* MyCatTableViewCell.swift */,
+				F8E427081F9C15890054D4B3 /* Base.lproj */,
+				F8E427091F9C15890054D4B3 /* Assets.xcassets */,
 				F8E426FF1F9BFBF20054D4B3 /* Media */,
 				F8E426FE1F9BFBE60054D4B3 /* Model */,
 				F8E426FD1F9BFBD60054D4B3 /* Login */,
@@ -298,7 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC429E191F9B039400ED914F /* LaunchScreen.storyboard in Resources */,
+				F8E4270F1F9C15890054D4B3 /* MyCatTableViewController.xib in Resources */,
+				F8E4270D1F9C15890054D4B3 /* MyCatViewController.xib in Resources */,
 				FC429E161F9B039400ED914F /* Assets.xcassets in Resources */,
+				F8E427131F9C15890054D4B3 /* Assets.xcassets in Resources */,
+				F8E427121F9C15890054D4B3 /* Base.lproj in Resources */,
 				FC429E141F9B039400ED914F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,8 +456,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F870522F1F9BB45B00BCE1E3 /* LoginViewController.swift in Sources */,
+				F8E4270C1F9C15890054D4B3 /* SubCatTableTableViewController.swift in Sources */,
+				F8E4270A1F9C15890054D4B3 /* SubCatViewController.swift in Sources */,
+				F8E427101F9C15890054D4B3 /* MyCatTableViewController.swift in Sources */,
 				FC429E341F9B092400ED914F /* AllCatTableViewCell.swift in Sources */,
+				F8E4270B1F9C15890054D4B3 /* SubCatTableViewCell.swift in Sources */,
+				F8E4270E1F9C15890054D4B3 /* MyCatViewController.swift in Sources */,
 				FC429E3C1F9B0C0900ED914F /* AllCatTableViewController.swift in Sources */,
+				F8E427111F9C15890054D4B3 /* MyCatTableViewCell.swift in Sources */,
 				FC429E0D1F9B039400ED914F /* AppDelegate.swift in Sources */,
 				FCFA68301F9B5BE100515B21 /* AllCatViewController.swift in Sources */,
 				F8E426FB1F9BE1910054D4B3 /* CatPreviewTableViewCell.swift in Sources */,
