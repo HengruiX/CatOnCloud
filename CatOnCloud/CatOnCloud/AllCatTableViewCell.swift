@@ -14,6 +14,7 @@ class AllCatTableViewCell: UITableViewCell {
     
    
     
+    @IBOutlet weak var nameButtom: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!

@@ -30,14 +30,11 @@ class AllCatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     private func loadCat() {
-        
         
        self.nameLabel.text=cat.name
        self.nameTextView.text=cat.description
        self.photoImageView.image=cat.photo
-        
     }
 
   
