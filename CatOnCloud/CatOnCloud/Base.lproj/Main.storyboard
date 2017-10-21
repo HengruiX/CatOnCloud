@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatTableViewCell" focusStyle="custom" rowHeight="133" id="TJF-dP-ISU" customClass="CatTableViewCell" customModule="CatOnCloud" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AllCatTableViewCell" focusStyle="custom" rowHeight="133" id="TJF-dP-ISU" customClass="AllCatTableViewCell" customModule="CatOnCloud" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TJF-dP-ISU" id="Oqq-VT-elL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="132.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihk-58-81G">
@@ -47,9 +47,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="Ihk-58-81G" id="hvl-R8-UGR"/>
+                                    <outlet property="nameLabel" destination="Ihk-58-81G" id="dPU-by-sne"/>
                                     <outlet property="nameTextView" destination="u2x-Ny-stJ" id="Yhr-4p-9gY"/>
                                     <outlet property="photoImageView" destination="mLk-q6-Nel" id="YpK-Cd-rEC"/>
+                                    <segue destination="P1a-17-evQ" kind="push" identifier="mySegue1" id="rBA-Y3-9et"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frz-97-5u3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168.8" y="-844.22788605697156"/>
+            <point key="canvasLocation" x="1505" y="-844"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -76,73 +77,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="Vzx-gv-qf9" kind="relationship" relationship="viewControllers" id="uIL-5d-xt8"/>
-                        <segue destination="P9Q-x5-g1w" kind="relationship" relationship="viewControllers" id="mh2-kc-RuI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--My Cats-->
-        <scene sceneID="VgK-JF-r8K">
-            <objects>
-                <tableViewController id="ZIb-Uv-60T" customClass="MyCatTableViewController" customModule="CatOnCloud" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="uSI-3d-NcU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCatTableViewCell" rowHeight="133" id="AWW-C4-5Yu" customClass="MyCatTableViewCell" customModule="CatOnCloud" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AWW-C4-5Yu" id="xS7-cU-qVv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKE-nN-7rX">
-                                            <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x1f-rI-d22">
-                                            <rect key="frame" x="138" y="25" width="230" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCS-Hl-vZ7">
-                                            <rect key="frame" x="138" y="7" width="230" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nameLabel" destination="QCS-Hl-vZ7" id="cSA-nC-in5"/>
-                                    <outlet property="nameTextView" destination="x1f-rI-d22" id="mvC-IV-ESc"/>
-                                    <outlet property="photoImageView" destination="tKE-nN-7rX" id="g77-RJ-x1g"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ZIb-Uv-60T" id="1nc-AN-Gf9"/>
-                            <outlet property="delegate" destination="ZIb-Uv-60T" id="1nR-Kp-g2l"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My Cats" id="Fv0-ql-wRy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jak-4l-Xnj">
-                            <connections>
-                                <segue destination="P1a-17-evQ" kind="show" id="mIn-BV-owP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xzz-QI-EzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1832.8" y="41.829085457271368"/>
+            <point key="canvasLocation" x="-994" y="-312"/>
         </scene>
         <!--Item-->
         <scene sceneID="QpT-3W-Tvf">
@@ -163,29 +102,10 @@
             </objects>
             <point key="canvasLocation" x="229.59999999999999" y="-844.22788605697156"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="9tL-jk-cqm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P9Q-x5-g1w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8HR-Gu-24h"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0JI-rt-jsQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ZIb-Uv-60T" kind="relationship" relationship="rootViewController" id="P08-if-CsA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2oH-aX-iAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="893.60000000000002" y="41.829085457271368"/>
-        </scene>
-        <!--Add Cat View Controller-->
+        <!--All Cat View Controller-->
         <scene sceneID="AGU-WR-Gnp">
             <objects>
-                <viewController id="P1a-17-evQ" customClass="AddCatViewController" customModule="CatOnCloud" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P1a-17-evQ" customClass="AllCatViewController" customModule="CatOnCloud" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0VK-5P-Pju"/>
                         <viewControllerLayoutGuide type="bottom" id="HfX-wo-s97"/>
@@ -201,46 +121,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Cat Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsd-eG-0Q5">
-                                <rect key="frame" x="16" y="182" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-K5-T98">
-                                <rect key="frame" x="16" y="220" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set Cat Name"/>
-                                <connections>
-                                    <action selector="setDefaultLabelText:" destination="P1a-17-evQ" eventType="touchUpInside" id="sBk-bc-fmH"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-jE-noM">
-                                <rect key="frame" x="16" y="290" width="343" height="295"/>
+                                <rect key="frame" x="16" y="182" width="343" height="295"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="jD1-Fd-qD7" appends="YES" id="ClE-ba-tC9"/>
                                 </connections>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pvg-Wd-KkB">
+                                <rect key="frame" x="16" y="490" width="343" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="7Rj-DY-fSl"/>
                     <connections>
-                        <outlet property="nameLabel" destination="WUN-VI-d8L" id="tWS-YA-ebe"/>
-                        <outlet property="nameTextField" destination="hsd-eG-0Q5" id="sIZ-Zg-xM6"/>
-                        <outlet property="photoImageView" destination="fd5-jE-noM" id="rBs-67-MBX"/>
+                        <outlet property="nameLabel" destination="WUN-VI-d8L" id="G2W-1J-tMU"/>
+                        <outlet property="nameTextView" destination="Pvg-Wd-KkB" id="O0J-wO-HUG"/>
+                        <outlet property="photoImageView" destination="fd5-jE-noM" id="KVg-5k-kD0"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="jD1-Fd-qD7"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRq-WI-PhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="jD1-Fd-qD7">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="P1a-17-evQ" id="7a1-IM-7GY"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2648.8000000000002" y="41.829085457271368"/>
+            <point key="canvasLocation" x="2594" y="-844"/>
         </scene>
     </scenes>
 </document>

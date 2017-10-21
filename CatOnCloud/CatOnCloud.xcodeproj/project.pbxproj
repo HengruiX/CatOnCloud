@@ -13,15 +13,12 @@
 		FC429E161F9B039400ED914F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC429E151F9B039400ED914F /* Assets.xcassets */; };
 		FC429E191F9B039400ED914F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC429E171F9B039400ED914F /* LaunchScreen.storyboard */; };
 		FC429E241F9B039400ED914F /* CatOnCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E231F9B039400ED914F /* CatOnCloudTests.swift */; };
-		FC429E341F9B092400ED914F /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E321F9B092400ED914F /* CatTableViewCell.swift */; };
-		FC429E351F9B092400ED914F /* CatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC429E331F9B092400ED914F /* CatTableViewCell.xib */; };
+		FC429E341F9B092400ED914F /* AllCatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E321F9B092400ED914F /* AllCatTableViewCell.swift */; };
+		FC429E351F9B092400ED914F /* AllCatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC429E331F9B092400ED914F /* AllCatTableViewCell.xib */; };
 		FC429E3C1F9B0C0900ED914F /* AllCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E3A1F9B0C0900ED914F /* AllCatTableViewController.swift */; };
 		FC429E3D1F9B0C0900ED914F /* AllCatTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC429E3B1F9B0C0900ED914F /* AllCatTableViewController.xib */; };
 		FC429E3F1F9B0DC400ED914F /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E3E1F9B0DC400ED914F /* Cat.swift */; };
-		FC429E411F9B170E00ED914F /* MyCatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E401F9B170E00ED914F /* MyCatTableViewCell.swift */; };
-		FC429E441F9B1A0100ED914F /* MyCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E421F9B1A0100ED914F /* MyCatTableViewController.swift */; };
-		FC429E451F9B1A0100ED914F /* MyCatTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC429E431F9B1A0100ED914F /* MyCatTableViewController.xib */; };
-		FCFA68271F9B4B1A00515B21 /* AddCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA68261F9B4B1A00515B21 /* AddCatViewController.swift */; };
+		FCFA68301F9B5BE100515B21 /* AllCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFA682F1F9B5BE100515B21 /* AllCatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,19 +30,6 @@
 			remoteInfo = CatOnCloud;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		FC429E711F9B40F200ED914F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		33F673FC4C4AD0AD91973529 /* Pods-CatOnCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatOnCloudTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatOnCloudTests/Pods-CatOnCloudTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,15 +46,12 @@
 		FC429E1F1F9B039400ED914F /* CatOnCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatOnCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC429E231F9B039400ED914F /* CatOnCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatOnCloudTests.swift; sourceTree = "<group>"; };
 		FC429E251F9B039400ED914F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC429E321F9B092400ED914F /* CatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
-		FC429E331F9B092400ED914F /* CatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CatTableViewCell.xib; sourceTree = "<group>"; };
+		FC429E321F9B092400ED914F /* AllCatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCatTableViewCell.swift; sourceTree = "<group>"; };
+		FC429E331F9B092400ED914F /* AllCatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllCatTableViewCell.xib; sourceTree = "<group>"; };
 		FC429E3A1F9B0C0900ED914F /* AllCatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllCatTableViewController.swift; path = ../AllCatTableViewController.swift; sourceTree = "<group>"; };
 		FC429E3B1F9B0C0900ED914F /* AllCatTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllCatTableViewController.xib; path = ../AllCatTableViewController.xib; sourceTree = "<group>"; };
 		FC429E3E1F9B0DC400ED914F /* Cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
-		FC429E401F9B170E00ED914F /* MyCatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCatTableViewCell.swift; sourceTree = "<group>"; };
-		FC429E421F9B1A0100ED914F /* MyCatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCatTableViewController.swift; sourceTree = "<group>"; };
-		FC429E431F9B1A0100ED914F /* MyCatTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCatTableViewController.xib; sourceTree = "<group>"; };
-		FCFA68261F9B4B1A00515B21 /* AddCatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCatViewController.swift; sourceTree = "<group>"; };
+		FCFA682F1F9B5BE100515B21 /* AllCatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCatViewController.swift; sourceTree = "<group>"; };
 		FFD9FF62A254140C8115495E /* Pods-CatOnCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatOnCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatOnCloud/Pods-CatOnCloud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,15 +119,12 @@
 			children = (
 				FC429E0C1F9B039400ED914F /* AppDelegate.swift */,
 				FC429E3A1F9B0C0900ED914F /* AllCatTableViewController.swift */,
-				FC429E421F9B1A0100ED914F /* MyCatTableViewController.swift */,
-				FC429E431F9B1A0100ED914F /* MyCatTableViewController.xib */,
 				FC429E3E1F9B0DC400ED914F /* Cat.swift */,
 				FC429E3B1F9B0C0900ED914F /* AllCatTableViewController.xib */,
-				FC429E321F9B092400ED914F /* CatTableViewCell.swift */,
-				FC429E331F9B092400ED914F /* CatTableViewCell.xib */,
+				FC429E321F9B092400ED914F /* AllCatTableViewCell.swift */,
+				FC429E331F9B092400ED914F /* AllCatTableViewCell.xib */,
 				FC429E121F9B039400ED914F /* Main.storyboard */,
-				FCFA68261F9B4B1A00515B21 /* AddCatViewController.swift */,
-				FC429E401F9B170E00ED914F /* MyCatTableViewCell.swift */,
+				FCFA682F1F9B5BE100515B21 /* AllCatViewController.swift */,
 				FC429E151F9B039400ED914F /* Assets.xcassets */,
 				FC429E171F9B039400ED914F /* LaunchScreen.storyboard */,
 				FC429E1A1F9B039400ED914F /* Info.plist */,
@@ -176,7 +154,6 @@
 				FC429E071F9B039400ED914F /* Resources */,
 				CD97901DBF33D54B519DED9F /* [CP] Embed Pods Frameworks */,
 				3DDC8A162E77D0317628E5C1 /* [CP] Copy Pods Resources */,
-				FC429E711F9B40F200ED914F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,8 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC429E351F9B092400ED914F /* CatTableViewCell.xib in Resources */,
-				FC429E451F9B1A0100ED914F /* MyCatTableViewController.xib in Resources */,
+				FC429E351F9B092400ED914F /* AllCatTableViewCell.xib in Resources */,
 				FC429E191F9B039400ED914F /* LaunchScreen.storyboard in Resources */,
 				FC429E161F9B039400ED914F /* Assets.xcassets in Resources */,
 				FC429E3D1F9B0C0900ED914F /* AllCatTableViewController.xib in Resources */,
@@ -378,13 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC429E341F9B092400ED914F /* CatTableViewCell.swift in Sources */,
-				FC429E411F9B170E00ED914F /* MyCatTableViewCell.swift in Sources */,
+				FC429E341F9B092400ED914F /* AllCatTableViewCell.swift in Sources */,
 				FC429E3C1F9B0C0900ED914F /* AllCatTableViewController.swift in Sources */,
 				FC429E0D1F9B039400ED914F /* AppDelegate.swift in Sources */,
-				FCFA68271F9B4B1A00515B21 /* AddCatViewController.swift in Sources */,
+				FCFA68301F9B5BE100515B21 /* AllCatViewController.swift in Sources */,
 				FC429E3F1F9B0DC400ED914F /* Cat.swift in Sources */,
-				FC429E441F9B1A0100ED914F /* MyCatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +499,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFD9FF62A254140C8115495E /* Pods-CatOnCloud.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CatOnCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -539,7 +512,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C33D2D17545F1F00FB36156 /* Pods-CatOnCloud.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CatOnCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

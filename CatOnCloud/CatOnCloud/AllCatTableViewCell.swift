@@ -9,11 +9,12 @@
 import UIKit
 import Alamofire
 
-class CatTableViewCell: UITableViewCell {
+class AllCatTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var nameLabel: UILabel!
+   
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
     
