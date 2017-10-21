@@ -53,15 +53,16 @@ class UsersController < ApplicationController
 
   def recommanded_cats
     # Naive implementation
-    a = rand(Cat.count)
-    b = rand(Cat.count)
-    c = rand(Cat.count)
+    res = []
+    id = params["id"]
+    Cat.where("owner_id != #{id}").find_each do |cat|
+      res.push(cat)
+    end
 
-    a_rec = Cat.offset(a).first
-    b_rec = Cat.offset(b).first
-    c_rec = Cat.offset(c).first
+    a = rand(res.count)
+    b = rand(res.count)
 
-    render json: [a_rec, b_rec, c_rec]
+    render json: [res[a], res[b]]
   end
 
 end

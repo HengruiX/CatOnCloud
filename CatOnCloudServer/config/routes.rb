@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-	resources :items
-  	resources :short_videos
 	root "application#hello"
 	post "newcat"=> "cats#create_cat"
 	get "getcats" => "cats#getcats"

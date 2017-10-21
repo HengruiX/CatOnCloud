@@ -28,8 +28,8 @@ class CatsController < ApplicationController
 		Post.where("cat_id = #{id}").find_each do |post|
 			posts.push(post)
 		end
-		posts = posts.sample([10,posts.count].min)
 		posts.sort!{|a,b| a.updated_at <=> b.updated_at}
+		posts = posts[1..[10,posts.count].min]
 		render json:posts
 	end
 
