@@ -1,5 +1,5 @@
 class NewcatsController < ApplicationController
-	def creat_new
+	def create_new
 		@newcat = Newcat.new
 		@newcat.name = params["name"]
 		@newcat.description = params["description"]
