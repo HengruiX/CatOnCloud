@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :items
 	root "application#hello"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	post "posts/create" => "posts#create"
+
+	# images
+	post "image/upload" => "image#upload"
+	get "image/get_all" => "image#get_all"
 end
