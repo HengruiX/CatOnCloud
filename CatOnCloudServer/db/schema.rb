@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021121638) do
+ActiveRecord::Schema.define(version: 20171021125844) do
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20171021121638) do
     t.text "intro"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscribed"
+    t.integer "subscribes"
   end
 
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new
     @user.name = params["name"]
     @user.intro = params["intro"]
-    @user.subscribed = []
+    @user.subscribed = [1]
     if @user.save
       render json: {status: :created, location: @user}
     else
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params["user_id"])
     @cat = Cat.find(cat_id)
     if @user != nil && @cat != nil
-      @user.subscribed.push(cat_id)
+      @user.subscribes.push(cat_id)
       @user.save
       @cat.subscription = @cat.subscription + 1
       @cat.save
@@ -31,8 +31,9 @@ class UsersController < ApplicationController
   def subscribed_cats
     @user = User.find(params["id"])
     res = []
+    puts(@user.subscribes)
     if @user != nil
-      for id in @user.subscribed
+      for id in @user.subscribes
         res.push(Cat.find(id))
       end
     end
