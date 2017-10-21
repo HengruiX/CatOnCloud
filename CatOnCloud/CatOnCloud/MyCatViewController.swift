@@ -1,5 +1,5 @@
 //
-//  AddCatViewController.swift
+//  MyCatViewController.swift
 //  CatOnCloud
 //
 //  Created by irene on 10/21/17.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-class AllCatViewController: UIViewController {
-
-    @IBOutlet weak var nameLabel: UILabel!
+class MyCatViewController: UIViewController {
     
-    @IBOutlet weak var nameTextView: UITextView!
+    //MARK:properties
+    
+   
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var nameDescription: UILabel!
     var cat: Cat!
     
     
@@ -22,7 +24,7 @@ class AllCatViewController: UIViewController {
         
         loadCat()
         
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,13 +32,16 @@ class AllCatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     private func loadCat() {
         
-       self.nameLabel.text=cat.name
-       self.nameTextView.text=cat.description
-       self.photoImageView.image=cat.photo
+        
+        self.nameLabel.text=cat.name
+        self.nameDescription.text=cat.description
+        self.photoImageView.image=cat.photo
+        
     }
-
-  
+    
+    
     
 }
