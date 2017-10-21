@@ -6,19 +6,38 @@ class PostsController < ApplicationController
     @post.time = Time.now
     @post.likes = 0
     @post.cat_id = params["cat_id"]
-    urls = []
+    image_urls = []
+    video_urls = []
 
-    for i in params["image_ids"]
+    for i in params["media_ids"]
       @item = Item.find(i)
-      urls.push(@item.picture.url(:medium))
+      if @item != nil
+        if @item.type == 0
+          image_urls.push(@item.picture.url(:medium))
+        else 
+          video_urls.push(@item.picture.url(:medium))
+        end
+      end
     end
-
-    @post.imageURLS = urls
+    @post.imageURLS = image_urls 
+    @post.videoURLS = video_urls
 
     if @post.save
       render json: {status: :created, location: @post}
     else
       render json: {status: :unprocessable_entity, err: @post.errors}
+    end
+  end
+
+  def liked
+    @post = Post.find(params["id"])
+    if @post != nil 
+      @post.likes += 1
+      if @post.save
+        render json: {status: :created, location: @post}
+      else
+        render json: {status: :unprocessable_entity, err: @post.errors}
+      end
     end
   end
 

@@ -4,16 +4,29 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def create
+    @user = User.new
+    @user.name = params["name"]
+    @user.intro = params["intro"]
+    @user.subscribed = []
+    if @user.save
+      render json: {status: :created, location: @user}
+    else
+      render json: {status: :unprocessable_entity, err: @user.errors}
+    end
+  end
+
   def subscribe
     cat_id = params["cat_id"]
-    @user = User.find_by(params["user_id"])
+    @user = User.find(params["user_id"])
     @cat = Cat.find(cat_id)
     if @user != nil && @cat != nil
       @user.subscribed.push(cat_id)
       @user.save
-      @cat.subscription += 1
+      @cat.subscription = @cat.subscription + 1
       @cat.save
     end
+  end
 
   def subscribed_cats
     @user = User.find(params["id"])
@@ -47,4 +60,5 @@ class UsersController < ApplicationController
 
     render json: [a_rec, b_rec, c_rec]
   end
+
 end

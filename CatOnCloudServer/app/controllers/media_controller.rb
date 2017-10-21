@@ -1,8 +1,9 @@
-class ImageController < ApplicationController
+class MediaController < ApplicationController
 
   def upload
     @item = Item.new
-    @item.picture = params["picture"]
+    @item.type = params["type"]
+    @item.picture = params["media"]
 
     if @item.save
       render json: {status: :created, location: @item}

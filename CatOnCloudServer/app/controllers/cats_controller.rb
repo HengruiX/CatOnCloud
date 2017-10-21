@@ -4,38 +4,41 @@ class CatsController < ApplicationController
 		@cat = Cat.new
 		@cat.name = params["name"]
 		@cat.description = params["description"]
-		@cat.picsUrl = params["picsUrl"]
+		urls = []
+		for i in params["image_ids"]
+      		@item = Item.find(i)
+      		urls.push(@item.picture.url(:medium))
+    	end
+		@cat.picsUrl = urls
 		@cat.rate = params["rate"]
 		@cat.location = params["location"]
 		@cat.subscription = 0
 		@cat.owner_id = params["owner_id"]
-		@cat.save
+		if @cat.save
+	      render json: {status: :created, location: @cat}
+	    else
+	      render json: {status: :unprocessable_entity, err: @cat.errors}
+	    end
 	end
-
-	# get subsribe number
-	def subscribed
-		id = params["id"]
-		@cat=Cat.find(id)
-		@cat.subscription += 1
-		@cat.save
-	end
-
 
 	# get sorted post of a specific cat
 	def get_post
 		id = params["id"]
 		posts = []
-		Post.where("cat_id = #{id}".find_each do |post|)
-			posts.push(cat)
+		Post.where("cat_id = #{id}").find_each do |post|
+			posts.push(post)
 		end
-		posts = posts.sample(min(10,array.count))
-		posts.sort_by(|post| post.time)
+		posts = posts.sample([10,posts.count].min)
+		posts.sort!{|a,b| a.updated_at <=> b.updated_at}
 		render json:posts
 	end
 
 
-
-
+	def get_cat 
+		id = params["id"]
+		render json: Cat.find(id)
+	end
+		
 
 	def getcats
 		render json: Cat.all
