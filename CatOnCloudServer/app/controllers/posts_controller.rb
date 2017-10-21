@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @post.time = Time.now
     @post.likes = 0
     @post.cat_id = params["cat_id"]
+    @post.words = params["words"]
     image_urls = []
     video_urls = []
 

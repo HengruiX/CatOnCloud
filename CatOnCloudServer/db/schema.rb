@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171021082308) do
     t.text "imageURLS"
     t.text "videoURLS"
     t.integer "cat_id"
+    t.text "words"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

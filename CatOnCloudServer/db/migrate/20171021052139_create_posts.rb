@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.text :imageURLS
       t.text :videoURLS
       t.integer :cat_id
+      t.text :words
     end
   end
 end
