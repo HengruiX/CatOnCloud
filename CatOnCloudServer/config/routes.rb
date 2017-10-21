@@ -12,6 +12,13 @@ Rails.application.routes.draw do
 
 	# images
 	post "image/upload" => "image#upload"
-	get "image/get_all" => "image#get_all"
+
+	# user
+	get "user/info" => "user#info"
+	get "user/owned_cats" => "user#owned_cats"
+	get "user/subscribed_cats" => "user#subscribed_cats"
+
+	#cat
+	get "recommanded_cats" => "user#recommanded_cats"
 
 end

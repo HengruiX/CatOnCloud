@@ -5,8 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.integer :likes
       t.text :imageURLS
       t.text :videoURLS
-
-      t.timestamps
+      t.integer :cat_id
     end
   end
 end

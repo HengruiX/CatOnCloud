@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
     @post.time = Time.now
     @post.likes = 0
+    @post.cat_id = params["cat_id"]
     urls = []
 
     for i in params["image_ids"]
