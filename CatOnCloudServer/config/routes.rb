@@ -4,10 +4,8 @@ Rails.application.routes.draw do
 	root "application#hello"
 	post "/newcat"=> "cats#create_cat"
 	get "/getcats" => "cats#getcats"
-	post "/upload" => "attachment#create"
 
   
-	root "application#hello"
 	post "posts/create" => "posts#create"
 
 	# images
