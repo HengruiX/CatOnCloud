@@ -24,4 +24,12 @@ Rails.application.routes.draw do
 	#user_auth
 	get "auth" => "user_auths#auth"
 
+	post "create_newcat" => "newcats#create_new"
+	post "newcat/addimage" => "newcats#add_image"
+	get "newcatarround" => "newcats#newcatarround"
+
+	post "newcat/interested" => "newcats#interested"
+
+	post "newcat/adopted" => "newcats#adopted"
+
 end
