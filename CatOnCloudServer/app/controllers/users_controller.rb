@@ -33,9 +33,9 @@ class UsersController < ApplicationController
   def subscribed_cats
     @user = User.find(params["id"])
     res = []
-    puts(@user.subscribes)
+    puts(@user.sublist)
     if @user != nil
-      for id in @user.subscribes
+      for id in @user.sublist
         res.push(Cat.find(id))
       end
     end

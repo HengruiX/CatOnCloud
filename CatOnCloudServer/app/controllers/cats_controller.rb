@@ -29,7 +29,11 @@ class CatsController < ApplicationController
 			posts.push(post)
 		end
 		posts.sort!{|a,b| a.time <=> b.time}
+<<<<<<< HEAD
 		posts = posts[1..[10,posts.count].min].reverse
+=======
+		posts = posts[0..[10,posts.count].min]
+>>>>>>> 6e068b3702ab72cb9f17fb3801ca514a7e054c99
 		render json:posts
 	end
 

@@ -1,5 +1,5 @@
 //
-//  AllCatTableViewController.swift
+//  SubCatTableTableViewController.swift
 //  CatOnCloud
 //
 //  Created by irene on 10/21/17.
@@ -8,21 +8,21 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
-class MyCatTableViewController: UITableViewController{
+class MyCatTableTableViewController: UITableViewController {
     
-    //MARK: Properties
+    ///MARK: Properties
     var cats = [ Cat ]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadOwnedCats()
         
-        loadSampleCats()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -42,7 +42,7 @@ class MyCatTableViewController: UITableViewController{
         let cellIdentifier = "MyCatTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MyCatTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MyTableViewCell.")
+            fatalError("The dequeued cell is not an instance of SubCatTableViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.
@@ -55,37 +55,37 @@ class MyCatTableViewController: UITableViewController{
         return cell
     }
     
-    
-    
-    private func loadSampleCats() {
+    func loadOwnedCats() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let baseURL = appDelegate.baseURL
+        let userID = appDelegate.userID
         
-        let photo1 = UIImage(named: "cat1")
-        let photo2 = UIImage(named: "cat2")
-        let photo3 = UIImage(named: "cat3")
-        
-        guard let cat1 = Cat(name: "AAA ", photo: photo1, description: "she is lazy ") else {
-            fatalError("Unable to instantiate cat1")
+        Alamofire.request("\(baseURL)/user/owned_cats?id=\(userID)").responseJSON { response in
+            
+            if((response.result.value) != nil) {
+                let json = JSON(response.result.value!)
+                let helper = ImageHelper()
+                for catJson in json {
+                    let url = catJson.1["picsUrl"].arrayValue[0].stringValue
+                    helper.downloadImage(url: "\(baseURL)\(url)", completion: { (image) in
+                        let cat = Cat(name: catJson.1["name"].stringValue, photo: image, description: catJson.1["description"].stringValue, data: catJson.1)
+                        self.cats.append(cat!)
+                        self.tableView.reloadData()
+                    })
+                }
+            }
         }
-        
-        guard let cat2 = Cat(name: "BBB ", photo: photo2, description: "she is lazier ") else {
-            fatalError("Unable to instantiate cat2")
-        }
-        
-        guard let cat3 = Cat(name: "CCC ", photo: photo3, description: "she is the laziest ") else {
-            fatalError("Unable to instantiate cat3")
-        }
-        
-        cats += [cat1, cat2, cat3]
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "mySegue2",
+        if segue.identifier == "mySegue3",
             let nextScene = segue.destination as? MyCatViewController ,
             let indexPath = self.tableView.indexPathForSelectedRow {
             let selectedVehicle = cats[indexPath.row]
             nextScene.cat = selectedVehicle
             
+            
         }
     }
-    
 }
