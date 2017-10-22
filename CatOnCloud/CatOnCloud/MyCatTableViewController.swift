@@ -1,5 +1,5 @@
 //
-//  AllCatTableViewController.swift
+//  SubCatTableTableViewController.swift
 //  CatOnCloud
 //
 //  Created by irene on 10/21/17.
@@ -7,23 +7,20 @@
 //
 
 import UIKit
-import Alamofire
 
-class MyCatTableViewController: UITableViewController{
+class MyCatTableTableViewController: UITableViewController {
     
     //MARK: Properties
     var cats = [ Cat ]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,7 +38,7 @@ class MyCatTableViewController: UITableViewController{
         let cellIdentifier = "MyCatTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MyCatTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MyTableViewCell.")
+            fatalError("The dequeued cell is not an instance of MyCatTableViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.
@@ -53,13 +50,14 @@ class MyCatTableViewController: UITableViewController{
         
         return cell
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mySegue3",
             let nextScene = segue.destination as? MyCatViewController ,
             let indexPath = self.tableView.indexPathForSelectedRow {
             let selectedVehicle = cats[indexPath.row]
             nextScene.cat = selectedVehicle
+            
             
         }
     }
