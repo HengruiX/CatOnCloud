@@ -30,4 +30,6 @@ Rails.application.routes.draw do
 
 	post "newcat/interested" => "newcats#interested"
 
+	post "newcat/adopted" => "newcats#adopted"
+
 end

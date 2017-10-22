@@ -28,8 +28,8 @@ class CatsController < ApplicationController
 		Post.where("cat_id = #{id}").find_each do |post|
 			posts.push(post)
 		end
-		posts.sort!{|a,b| a.updated_at <=> b.updated_at}
-		posts = posts[1..[10,posts.count].min]
+		posts.sort!{|a,b| a.time <=> b.time}
+		posts = posts[1..[10,posts.count].min].reverse
 		render json:posts
 	end
 

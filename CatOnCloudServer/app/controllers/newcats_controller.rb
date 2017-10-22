@@ -22,6 +22,7 @@ class NewcatsController < ApplicationController
 		@newcat = Newcat.find(params["newcat_id"])
 		image_id = params["image_id"]
 		@newcat.pics.push(Item.find(image_id).picture.url(:medium))
+		@newcat.save
 	end
 
 	def newcatarround
@@ -42,5 +43,20 @@ class NewcatsController < ApplicationController
 		newcat_id = params["newcat_id"]
 	    @newcat = Newcat.find(newcat_id)
 	    @newcat.interested += 1
+	    @newcat.save
+	end
+
+	def adopted
+		newcat_id = params["newcat_id"]
+		adopter_id = params["adopter_id"]
+		@newcat = Newcat.find(newcat_id)
+		param_for_cat = {"name" => @newcat.name, "description"=> @newcat.description, "picsUrl" => @newcat.pics, "owner_id" => adopter_id}
+		Newcat.destroy(newcat_id)
+		@cat = Cat.new(param_for_cat)
+		if @cat.save
+	      render json: {id: @cat.id}
+	    else
+	      render json: {status: :unprocessable_entity, err: @cat.errors}
+	    end
 	end
 end
