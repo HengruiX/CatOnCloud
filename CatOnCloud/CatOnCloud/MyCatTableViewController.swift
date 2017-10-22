@@ -16,8 +16,7 @@ class MyCatTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadSampleCats()
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,31 +54,8 @@ class MyCatTableViewController: UITableViewController{
         return cell
     }
     
-    
-    
-    private func loadSampleCats() {
-        
-        let photo1 = UIImage(named: "cat1")
-        let photo2 = UIImage(named: "cat2")
-        let photo3 = UIImage(named: "cat3")
-        
-        guard let cat1 = Cat(name: "AAA ", photo: photo1, description: "she is lazy ") else {
-            fatalError("Unable to instantiate cat1")
-        }
-        
-        guard let cat2 = Cat(name: "BBB ", photo: photo2, description: "she is lazier ") else {
-            fatalError("Unable to instantiate cat2")
-        }
-        
-        guard let cat3 = Cat(name: "CCC ", photo: photo3, description: "she is the laziest ") else {
-            fatalError("Unable to instantiate cat3")
-        }
-        
-        cats += [cat1, cat2, cat3]
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "mySegue2",
+        if segue.identifier == "mySegue3",
             let nextScene = segue.destination as? MyCatViewController ,
             let indexPath = self.tableView.indexPathForSelectedRow {
             let selectedVehicle = cats[indexPath.row]

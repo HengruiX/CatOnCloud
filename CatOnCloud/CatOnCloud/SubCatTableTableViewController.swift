@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class SubCatTableTableViewController: UITableViewController {
 
@@ -15,17 +17,13 @@ class SubCatTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadSubscribedCats()
        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-            }
     
     // MARK: - Table view data source
     
@@ -55,6 +53,28 @@ class SubCatTableTableViewController: UITableViewController {
         cell.nameDescription.text = cat.description
         
         return cell
+    }
+    
+    func loadSubscribedCats() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let baseURL = appDelegate.baseURL
+        let userID = appDelegate.userID
+        
+        Alamofire.request("\(baseURL)/user/subscribed_cats?id=\(userID)").responseJSON { response in
+            
+            if((response.result.value) != nil) {
+                let json = JSON(response.result.value!)
+                let helper = ImageHelper()
+                for catJson in json {
+                    let url = catJson.1["picsUrl"].arrayValue[0].stringValue
+                    helper.downloadImage(url: "\(baseURL)\(url)", completion: { (image) in
+                        let cat = Cat(name: catJson.1["name"].stringValue, photo: image, description: catJson.1["description"].stringValue, data: catJson.1)
+                        self.cats.append(cat!)
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+        }
     }
     
     

@@ -25,6 +25,9 @@
 		F8E427111F9C15890054D4B3 /* MyCatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427071F9C15890054D4B3 /* MyCatTableViewCell.swift */; };
 		F8E427121F9C15890054D4B3 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F8E427081F9C15890054D4B3 /* Base.lproj */; };
 		F8E427131F9C15890054D4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E427091F9C15890054D4B3 /* Assets.xcassets */; };
+		F8E427171F9C1EF50054D4B3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427161F9C1EF50054D4B3 /* Post.swift */; };
+		F8E427191F9C24CE0054D4B3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E427181F9C24CE0054D4B3 /* PostCell.swift */; };
+		F8E4271B1F9C40E90054D4B3 /* PostPicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4271A1F9C40E90054D4B3 /* PostPicCell.swift */; };
 		FC429E0D1F9B039400ED914F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC429E0C1F9B039400ED914F /* AppDelegate.swift */; };
 		FC429E141F9B039400ED914F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC429E121F9B039400ED914F /* Main.storyboard */; };
 		FC429E161F9B039400ED914F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC429E151F9B039400ED914F /* Assets.xcassets */; };
@@ -84,6 +87,9 @@
 		F8E427071F9C15890054D4B3 /* MyCatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCatTableViewCell.swift; sourceTree = "<group>"; };
 		F8E427081F9C15890054D4B3 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		F8E427091F9C15890054D4B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8E427161F9C1EF50054D4B3 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F8E427181F9C24CE0054D4B3 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		F8E4271A1F9C40E90054D4B3 /* PostPicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPicCell.swift; sourceTree = "<group>"; };
 		FC429E091F9B039400ED914F /* CatOnCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatOnCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC429E0C1F9B039400ED914F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC429E131F9B039400ED914F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				FC429E3E1F9B0DC400ED914F /* Cat.swift */,
+				F8E427161F9C1EF50054D4B3 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -180,6 +187,30 @@
 				F8E426F31F9BC7F90054D4B3 /* ImageHelper.swift */,
 			);
 			name = Media;
+			sourceTree = "<group>";
+		};
+		F8E427141F9C15F30054D4B3 /* subscribed */ = {
+			isa = PBXGroup;
+			children = (
+				F8E427001F9C15890054D4B3 /* SubCatViewController.swift */,
+				F8E427011F9C15890054D4B3 /* SubCatTableViewCell.swift */,
+				F8E427021F9C15890054D4B3 /* SubCatTableTableViewController.swift */,
+				F8E427181F9C24CE0054D4B3 /* PostCell.swift */,
+				F8E4271A1F9C40E90054D4B3 /* PostPicCell.swift */,
+			);
+			name = subscribed;
+			sourceTree = "<group>";
+		};
+		F8E427151F9C16410054D4B3 /* owned */ = {
+			isa = PBXGroup;
+			children = (
+				F8E427031F9C15890054D4B3 /* MyCatViewController.xib */,
+				F8E427041F9C15890054D4B3 /* MyCatViewController.swift */,
+				F8E427051F9C15890054D4B3 /* MyCatTableViewController.xib */,
+				F8E427061F9C15890054D4B3 /* MyCatTableViewController.swift */,
+				F8E427071F9C15890054D4B3 /* MyCatTableViewCell.swift */,
+			);
+			name = owned;
 			sourceTree = "<group>";
 		};
 		FC429E001F9B039400ED914F = {
@@ -205,14 +236,8 @@
 		FC429E0B1F9B039400ED914F /* CatOnCloud */ = {
 			isa = PBXGroup;
 			children = (
-				F8E427001F9C15890054D4B3 /* SubCatViewController.swift */,
-				F8E427011F9C15890054D4B3 /* SubCatTableViewCell.swift */,
-				F8E427021F9C15890054D4B3 /* SubCatTableTableViewController.swift */,
-				F8E427031F9C15890054D4B3 /* MyCatViewController.xib */,
-				F8E427041F9C15890054D4B3 /* MyCatViewController.swift */,
-				F8E427051F9C15890054D4B3 /* MyCatTableViewController.xib */,
-				F8E427061F9C15890054D4B3 /* MyCatTableViewController.swift */,
-				F8E427071F9C15890054D4B3 /* MyCatTableViewCell.swift */,
+				F8E427151F9C16410054D4B3 /* owned */,
+				F8E427141F9C15F30054D4B3 /* subscribed */,
 				F8E427081F9C15890054D4B3 /* Base.lproj */,
 				F8E427091F9C15890054D4B3 /* Assets.xcassets */,
 				F8E426FF1F9BFBF20054D4B3 /* Media */,
@@ -458,17 +483,20 @@
 				F870522F1F9BB45B00BCE1E3 /* LoginViewController.swift in Sources */,
 				F8E4270C1F9C15890054D4B3 /* SubCatTableTableViewController.swift in Sources */,
 				F8E4270A1F9C15890054D4B3 /* SubCatViewController.swift in Sources */,
+				F8E4271B1F9C40E90054D4B3 /* PostPicCell.swift in Sources */,
 				F8E427101F9C15890054D4B3 /* MyCatTableViewController.swift in Sources */,
 				FC429E341F9B092400ED914F /* AllCatTableViewCell.swift in Sources */,
 				F8E4270B1F9C15890054D4B3 /* SubCatTableViewCell.swift in Sources */,
 				F8E4270E1F9C15890054D4B3 /* MyCatViewController.swift in Sources */,
 				FC429E3C1F9B0C0900ED914F /* AllCatTableViewController.swift in Sources */,
 				F8E427111F9C15890054D4B3 /* MyCatTableViewCell.swift in Sources */,
+				F8E427171F9C1EF50054D4B3 /* Post.swift in Sources */,
 				FC429E0D1F9B039400ED914F /* AppDelegate.swift in Sources */,
 				FCFA68301F9B5BE100515B21 /* AllCatViewController.swift in Sources */,
 				F8E426FB1F9BE1910054D4B3 /* CatPreviewTableViewCell.swift in Sources */,
 				FC429E3F1F9B0DC400ED914F /* Cat.swift in Sources */,
 				F8E426F41F9BC7F90054D4B3 /* ImageHelper.swift in Sources */,
+				F8E427191F9C24CE0054D4B3 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
