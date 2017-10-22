@@ -1,4 +1,3 @@
-require 'googleauth'
 require "google/cloud/vision"
 
 
@@ -10,7 +9,7 @@ end
 
 
 def suggest_similar(target,img_path)
-  project_id = "clean-sequencer-183609"
+  project_id = "catoncloud-183615"
   vision = Google::Cloud::Vision.new project: project_id
 
 #if already written, go to solution
