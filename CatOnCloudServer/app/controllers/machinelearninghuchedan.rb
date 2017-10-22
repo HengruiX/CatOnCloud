@@ -1,9 +1,6 @@
-require 'googleauth'
 require "google/cloud/vision"
 
 
-
- 
 def updated? ()
   true
 end
@@ -47,4 +44,4 @@ if (updated?)
   end
 end
 
-suggest_similar('./img/img4.jpg','./img')
+suggest_similar("./img/img4.jpg","./img")

@@ -52,17 +52,53 @@ class UsersController < ApplicationController
   end
 
   def recommanded_cats
-    # Naive implementation
+    # Machine Learning
     res = []
     id = params["id"]
     @user = User.find(id)
-    Cat.where("owner_id != #{id}").find_each do |cat|
-      if ! @user.sublist.include? cat.id
-        res.push(cat)
-      end
+    # Picture of the user's latest subscribed cat
+    cats_image
+    target = Cat.find(@user.sublist[sublist.count]).picsUrl[0]
+    for (Cat.all).each do |cat|
+      cats_image = {cat => cat.picsUrl[0]}
     end
+
+    
 
     render json: res
   end
 
-end
+  def updated? ()
+    true
+  end       
+
+  def suggest_similar(target,cats_image)
+    project_id = "clean-sequencer-183609"
+    vision = Google::Cloud::Vision.new project: project_id
+    if (updated?)
+      keys = cats_image.keys
+      data = {} # hashmap
+      data.default = []
+      bestImages = {}
+      bestImages.default = 1.0
+
+
+      keys.each do |cat|
+        data[cat] = (vision.image cat.picsUrl[0]).labels
+      end
+
+      tar_lab = (vision.image target).labels
+
+      keys.each do |cat|
+          data.fetch(cat, nil).each do |dest_label|
+               tar_lab.each do |origin_label|
+                  diff = (1.0 - (dest_label.score - origin_label.score))
+                  bestImages[cat] = bestImages.fetch(cat,1.0) * diff
+              end
+            end
+          end
+        end
+        return Hash[bestImages.sort.reverse].keys
+    end
+
+  end
