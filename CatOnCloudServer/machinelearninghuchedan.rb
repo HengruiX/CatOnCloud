@@ -1,5 +1,19 @@
+require 'googleauth'
 require "google/cloud/vision"
 
+client_id = Google::Auth::ClientId.from_file('./client.json')
+scopes =  ['https://www.googleapis.com/auth/cloud-platform',
+           'https://www.googleapis.com/auth/compute']
+
+authorizer = Google::Auth::ServiceAccountCredentials.make_creds(
+  json_key_io: File.open('./client.json'),
+  scope: scope)
+
+  authorizer.fetch_access_token!
+
+  require "google/apis/storage_v1"
+      storage = Google::Apis::StorageV1::StorageService.new
+      storage.authorization = authorizatier
 
 def updated? ()
   true
@@ -44,4 +58,4 @@ if (updated?)
   end
 end
 
-suggest_similar("./img/img4.jpg","./img")
+suggest_similar('./img/img4.jpg','./img')
