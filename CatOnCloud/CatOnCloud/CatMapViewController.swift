@@ -1,11 +1,3 @@
-//
-//  MapViewController.swift
-//  CatOnCloud
-//
-//  Created by irene on 10/22/17.
-//  Copyright © 2017 irene. All rights reserved.
-//
-
 import UIKit
 import MapKit
 

@@ -200,6 +200,7 @@
                         <segue destination="Vzx-gv-qf9" kind="relationship" relationship="viewControllers" id="uIL-5d-xt8"/>
                         <segue destination="DYk-DP-jhW" kind="relationship" relationship="viewControllers" id="3wa-dR-s8U"/>
                         <segue destination="J5r-7w-COt" kind="relationship" relationship="viewControllers" id="JNw-uc-bRa"/>
+                        <segue destination="4YA-WS-p8I" kind="relationship" relationship="viewControllers" id="nEO-yS-MUp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -564,6 +565,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhv-Z4-ffv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2485.5999999999999" y="-53.523238380809602"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="NfU-Fj-KRq">
+            <objects>
+                <viewController id="4YA-WS-p8I" customClass="CatMapViewController" customModule="CatOnCloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U7h-gy-fW0"/>
+                        <viewControllerLayoutGuide type="bottom" id="X2v-Zg-rNd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qmo-VF-fvp" customClass="CatMapVewController" customModule="CatOnCloud" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Juk-gk-PEu">
+                                <rect key="frame" x="16" y="87" width="343" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQD-5c-loN">
+                                <rect key="frame" x="16" y="431" width="343" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Location"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Fx7-Qm-Aiv"/>
+                    <connections>
+                        <outlet property="theMap" destination="Juk-gk-PEu" id="fya-xG-QGk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FoS-0T-NyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1456.8" y="1105.9970014992505"/>
         </scene>
         <!--Item-->
         <scene sceneID="sSc-Zf-zJQ">
