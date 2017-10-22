@@ -11,7 +11,6 @@ import Alamofire
 
 class MyCatTableViewCell: UITableViewCell {
     
-   
     @IBOutlet weak var nameDescription: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
