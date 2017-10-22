@@ -12,7 +12,7 @@ import Alamofire
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let baseURL = "https://4450f521.ngrok.io"
+    let baseURL = "http://cd0c3e17.ngrok.io"
     var userID = -1
 
     var window: UIWindow?

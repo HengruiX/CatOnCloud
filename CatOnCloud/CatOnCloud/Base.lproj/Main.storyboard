@@ -201,6 +201,7 @@
                         <segue destination="DYk-DP-jhW" kind="relationship" relationship="viewControllers" id="3wa-dR-s8U"/>
                         <segue destination="J5r-7w-COt" kind="relationship" relationship="viewControllers" id="JNw-uc-bRa"/>
                         <segue destination="4YA-WS-p8I" kind="relationship" relationship="viewControllers" id="nEO-yS-MUp"/>
+                        <segue destination="D5w-rF-gzu" kind="relationship" relationship="viewControllers" id="FCY-Xu-WcT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -578,26 +579,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Juk-gk-PEu">
-                                <rect key="frame" x="16" y="87" width="343" height="316"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSJ-Pd-Tnf">
+                                <rect key="frame" x="16" y="55" width="343" height="295"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQD-5c-loN">
-                                <rect key="frame" x="16" y="431" width="343" height="39"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bo9-Pe-63V">
+                                <rect key="frame" x="16" y="358" width="343" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Location"/>
+                                <state key="normal" title="Upload Picture"/>
+                                <connections>
+                                    <action selector="selectImageFromPhotoLibrary:" destination="4YA-WS-p8I" eventType="touchUpInside" id="jUF-pf-Ybn"/>
+                                    <action selector="uploadPicture:" destination="4YA-WS-p8I" eventType="touchUpInside" id="bcO-Vy-gmp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUG-2g-2Xf">
+                                <rect key="frame" x="16" y="409" width="343" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4r-yL-h6x">
+                                <rect key="frame" x="16" y="489" width="343" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd2-6t-G3M">
+                                <rect key="frame" x="16" y="574" width="343" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="submitCat:" destination="4YA-WS-p8I" eventType="touchUpInside" id="5DU-FZ-JoD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Fx7-Qm-Aiv"/>
                     <connections>
-                        <outlet property="theMap" destination="Juk-gk-PEu" id="fya-xG-QGk"/>
+                        <outlet property="button" destination="Bo9-Pe-63V" id="KGU-ok-3Jc"/>
+                        <outlet property="nameDescription" destination="G4r-yL-h6x" id="tZF-Sg-yJF"/>
+                        <outlet property="nameLabel" destination="LUG-2g-2Xf" id="qLu-HJ-zKl"/>
+                        <outlet property="photoView" destination="XSJ-Pd-Tnf" id="cfh-lH-HIJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FoS-0T-NyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1456.8" y="1105.9970014992505"/>
+            <point key="canvasLocation" x="-1927.2" y="805.54722638680664"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="7nF-ar-Dgw">
+            <objects>
+                <viewController id="D5w-rF-gzu" customClass="CatLocationViewController" customModule="CatOnCloud" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="agf-LW-YuC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hdr-4G-1tY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UP0-LA-5A1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e3d-JG-79t">
+                                <rect key="frame" x="16" y="64" width="343" height="276"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRL-Sw-5Qa">
+                                <rect key="frame" x="16" y="361" width="343" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload Location"/>
+                                <connections>
+                                    <action selector="uploadLocation:" destination="D5w-rF-gzu" eventType="touchUpInside" id="bxm-tf-pVc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="F94-iC-TYc"/>
+                    <connections>
+                        <outlet property="theMap" destination="e3d-JG-79t" id="AvV-6b-lvg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cs-3c-S2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946.39999999999998" y="805.54722638680664"/>
         </scene>
         <!--Item-->
         <scene sceneID="sSc-Zf-zJQ">
